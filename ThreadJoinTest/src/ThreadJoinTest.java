@@ -1,14 +1,14 @@
 import java.util.Arrays;
 import java.util.List;
 import java.util.LinkedList;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @class ThreadJoinTest
- *
  * @brief Demonstrates the use of Java Thread.join() as a simple
- *        barrier synchronizer to implement an "embarrassingly
- *        parallel" application that concurrently searches for words
- *        in a List of Strings.
+ * barrier synchronizer to implement an "embarrassingly
+ * parallel" application that concurrently searches for words
+ * in a List of Strings.
  */
 public class ThreadJoinTest {
     /**
@@ -21,27 +21,26 @@ public class ThreadJoinTest {
      * This input array is used by the ThreadJoinTest to search for
      * the words concurrently in multiple threads.
      */
-    private final static String[] mOneShotInputStrings = 
-    {"xreo", "xfao", "xmiomio", "xlao", "xtiotio", "xsoosoo", "xdoo", "xdoodoo"};
+    private final static String[] mOneShotInputStrings =
+            {"xreo", "xfao", "xmiomio", "xlao", "xtiotio", "xsoosoo", "xdoo", "xdoodoo"};
 
     // List of words to search for.
     private static String[] mWordList = {"do",
-                                         "re",
-                                         "mi",
-                                         "fa",
-                                         "so",
-                                         "la",
-                                         "ti",
-                                         "do"};
-        
+            "re",
+            "mi",
+            "fa",
+            "so",
+            "la",
+            "ti",
+            "do"};
+
     /**
      * @class SearchOneShotThreadGangJoin
-     *
      * @brief Starts a Thread for each element in the List of input
-     *        Strings and uses Thread.join() to wait for all the
-     *        Threads to finish.  This implementation doesn't require
-     *        any Java synchronization mechanisms other than what's
-     *        provided by Thread.
+     * Strings and uses Thread.join() to wait for all the
+     * Threads to finish.  This implementation doesn't require
+     * any Java synchronization mechanisms other than what's
+     * provided by Thread.
      */
     static public class SearchOneShotThreadJoin {
         /**
@@ -53,18 +52,18 @@ public class ThreadJoinTest {
          * The array of words to find.
          */
         final String[] mWordsToFind;
-        
+
         /**
          * The List of worker Threads that were created.
          */
         private List<Thread> mWorkerThreads;
-        
+
         /**
          * Constructor initializes the data members.
          */
         public SearchOneShotThreadJoin(String[] wordsToFind,
                                        String[] inputStrings) {
-        	// Initialize the data members.
+            // Initialize the data members.
             mWordsToFind = wordsToFind;
             mInput = Arrays.asList(inputStrings);
 
@@ -77,20 +76,22 @@ public class ThreadJoinTest {
                 // Each Thread performs the processing designated by
                 // the processInput() method of the worker Runnable.
                 Thread t = new Thread(makeTask(i));
-                
+
                 // Add to the List of Threads to join.
                 mWorkerThreads.add(t);
-                
+
                 // Start the Thread to process its input in the background.
                 t.start();
-            }        
+            }
 
             // Barrier synchronization.
             for (Thread thread : mWorkerThreads)
                 try {
                     thread.join();
+                    TimeUnit.SECONDS.sleep(5);
+                    System.out.println("thread :" + thread.getId());
                 } catch (InterruptedException e) {
-                	printDebugging("join() interrupted");
+                    printDebugging("join() interrupted");
                 }
         }
 
@@ -109,7 +110,7 @@ public class ThreadJoinTest {
 
                     // Process input data element.
                     if (processInput(element) == false)
-                      return;
+                        return;
                 }
             };
         }
@@ -120,9 +121,9 @@ public class ThreadJoinTest {
          * found the processResults() hook method is called to handle
          * the results.
          */
-        private boolean processInput (String inputData) {
+        private boolean processInput(String inputData) {
             // Iterate through each word we're searching for.
-            for (String word : mWordsToFind) 
+            for (String word : mWordsToFind)
                 // Check to see how many times (if any) the word
                 // appears in the input data.
                 for (int i = inputData.indexOf(word, 0);
@@ -130,14 +131,14 @@ public class ThreadJoinTest {
                      i = inputData.indexOf(word, i + word.length()))
                     // Each time a match is found the processResults()
                     // hook method is called to handle the results.
-                    processResults("in thread " 
-                                   + Thread.currentThread().getId()
-                                   + " "
-                                   + word
-                                   + " was found at offset "
-                                   + i
-                                   + " in string "
-                                   + inputData);
+                    processResults("in thread "
+                            + Thread.currentThread().getId()
+                            + " "
+                            + word
+                            + " was found at offset "
+                            + i
+                            + " in string "
+                            + inputData);
             return true;
         }
 
@@ -148,26 +149,26 @@ public class ThreadJoinTest {
             printDebugging(results);
         }
     }
-  
+
     /**
      * Print debugging output if @code diagnosticsEnabled is true.
      */
     static void printDebugging(String output) {
-        if (diagnosticsEnabled) 
-            System.out.println(output);                
+        if (diagnosticsEnabled)
+            System.out.println(output);
     }
 
     /**
-     * This is the entry point into the test program.  
+     * This is the entry point into the test program.
      */
     static public void main(String[] args) {
-    	printDebugging("Starting ThreadJoinTest");
-     
+        printDebugging("Starting ThreadJoinTest");
+
         // Create/run appropriate type of SearchThreadGang to search
         // for words concurrently.
         printDebugging("Starting JOIN");
         new SearchOneShotThreadJoin(mWordList,
-                                    mOneShotInputStrings);
+                mOneShotInputStrings);
         printDebugging("Ending JOIN");
 
         printDebugging("Ending ThreadJoinTest");

@@ -18,7 +18,7 @@ public class MainConsole {
          * ConsolePlatform.
          */
         PlatformStrategy.instance
-            (new PlatformStrategyFactory
+                (new PlatformStrategyFactory
              (System.out).makePlatformStrategy());
 
         /** Initializes the Options singleton. */

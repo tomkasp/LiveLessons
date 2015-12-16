@@ -57,14 +57,9 @@ public class PlatformStrategyFactory {
             /**
              * Map the PlatformType of ANDROID to a command object that
              * creates an @a PlatformStrategyAndroid implementation.
-             */
-            mPlatformStrategyMap.put(PlatformType.ANDROID,
-                                     new IPlatformStrategyFactoryCommand() {
-                                         // Creates the PlatformStrategyAndroid.
-                                         public PlatformStrategy execute() {
-                                             return new PlatformStrategyAndroid(output);
-                                         }
-                                     });
+             */{
+
+            }
         else if (mPlatformType == PlatformType.PLAIN_JAVA)
                  /**
                   * Map the PlatformType of PLAIN_JAVA to a command object that
