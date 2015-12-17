@@ -4,7 +4,8 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
 /**
- * This is a simple example of CountDownLatch
+ * This is a simple example of CountDownLatch. You can think about it as a barrier which blocks other threads to run
+ * until specific condition is reached.
  * Basically the aim of the Latch is to block threads until count reaches 0.
  * The count is specified with CountDownLatch constructor.
  * In below example await method (countDownLatch.await()) blocks thread threadWitLatchExample until countDownLatch reaches
