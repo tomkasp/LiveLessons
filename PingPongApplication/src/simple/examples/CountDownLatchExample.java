@@ -12,6 +12,10 @@ import java.util.concurrent.TimeUnit;
  * value equals to zero.
  * Second thread externalEventWhichDecreaseLatch actually decreases the latch counter. After for seconds thread
  * threadWitLatchExample will print text 'hello from thread: ' because latch counter is equal to zero.
+ *
+ * Two main methods:
+ * countDown() - decrease count
+ * await() -  await until count is equals to zero.
  */
 
 public class CountDownLatchExample {

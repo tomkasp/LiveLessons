@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36de99a7-86ed-4f1a-be4c-609ca7075dbe" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/simple/examples/SemaphoreMain.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/simple/examples/SemaphoreSimpleExample.java" afterPath="$PROJECT_DIR$/src/simple/examples/SemaphoreSimpleExample.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/simple/examples/CountDownLatchExample.java" afterPath="$PROJECT_DIR$/src/simple/examples/CountDownLatchExample.java" />
     </list>
     <ignored path="PingPongApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -112,8 +110,8 @@
       <file leaf-file-name="CountDownLatchExample.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/simple/examples/CountDownLatchExample.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.48951048">
-              <caret line="7" column="39" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
+            <state vertical-scroll-proportion="0.5804196">
+              <caret line="17" column="50" selection-start-line="17" selection-start-column="50" selection-end-line="17" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -146,10 +144,10 @@
         <option value="$PROJECT_DIR$/src/example/pingpong/MainConsole.java" />
         <option value="$PROJECT_DIR$/src/example/pingpong/PlatformStrategyFactory.java" />
         <option value="$PROJECT_DIR$/src/example/pingpong/PlayPingPong.java" />
-        <option value="$PROJECT_DIR$/src/simple/examples/CountDownLatchExample.java" />
         <option value="$PROJECT_DIR$/src/example/pingpong/PingPongThread.java" />
         <option value="$PROJECT_DIR$/src/simple/examples/SemaphoreSimpleExample.java" />
         <option value="$PROJECT_DIR$/src/simple/examples/SemaphoreMain.java" />
+        <option value="$PROJECT_DIR$/src/simple/examples/CountDownLatchExample.java" />
       </list>
     </option>
   </component>
@@ -745,12 +743,12 @@
       <created>1450264149272</created>
       <option name="number" value="Default" />
       <updated>1450264149272</updated>
-      <workItem from="1450264150653" duration="10275000" />
+      <workItem from="1450264150653" duration="10560000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10275000" />
+    <option name="totallyTimeSpent" value="10560000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="773" extended-state="6" />
@@ -928,8 +926,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/simple/examples/CountDownLatchExample.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.48951048">
-          <caret line="7" column="39" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
+        <state vertical-scroll-proportion="0.5804196">
+          <caret line="17" column="50" selection-start-line="17" selection-start-column="50" selection-end-line="17" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
