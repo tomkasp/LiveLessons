@@ -14,11 +14,11 @@ class PingPongThreadMonObj extends PingPongThread {
      * @class BinarySemaphore
      * 
      * @brief This class uses Java built-in monitor objects to
-     *        implement a simple binary semaphore.
+     *        implement a simple binary semaphoreStation.
      */
     static public class BinarySemaphore {
         /**
-         * Keeps track of whether the semaphore is unlocked or locked.
+         * Keeps track of whether the semaphoreStation is unlocked or locked.
          */
         private boolean mUnLocked;
     
@@ -31,7 +31,7 @@ class PingPongThreadMonObj extends PingPongThread {
         }
 
         /**
-         * Acquire the binary semaphore.
+         * Acquire the binary semaphoreStation.
          */
         public void acquire() {
             synchronized(this) {
@@ -48,11 +48,11 @@ class PingPongThreadMonObj extends PingPongThread {
         }
 
         /**
-         * Release the binary semaphore.
+         * Release the binary semaphoreStation.
          */
         public void release() {
             synchronized(this) {
-                // Release the semaphore and notify() a waiting
+                // Release the semaphoreStation and notify() a waiting
                 // Thread.
                 mUnLocked = true;
                 notify();
@@ -80,7 +80,7 @@ class PingPongThreadMonObj extends PingPongThread {
      */
     @Override
     protected void acquire() {
-        // Block until we acquire the semaphore.
+        // Block until we acquire the semaphoreStation.
 
         mMine.acquire();
     }
@@ -90,7 +90,7 @@ class PingPongThreadMonObj extends PingPongThread {
      */
     @Override
     protected void release() {
-        // Release the other semaphore.
+        // Release the other semaphoreStation.
 
         mOther.release();
     }

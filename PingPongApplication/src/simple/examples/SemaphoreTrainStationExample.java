@@ -7,6 +7,10 @@ import java.util.concurrent.Semaphore;
 /**
  * Semaphore simple example based on a train station. Semaphore acts like a station whcih allows to park and release
  * trains.
+ *
+ * Semaphore based methods:
+ * acquire()
+ * release()
  */
 public class SemaphoreTrainStationExample {
 

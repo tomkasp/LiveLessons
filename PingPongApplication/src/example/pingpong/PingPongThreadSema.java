@@ -31,7 +31,7 @@ class PingPongThreadSema extends PingPongThread {
      */
     @Override
     protected void acquire() {
-        // Block until we acquire the semaphore.
+        // Block until we acquire the semaphoreStation.
         mMine.acquireUninterruptibly();
     }
 
@@ -40,7 +40,7 @@ class PingPongThreadSema extends PingPongThread {
      */
     @Override
     protected void release() {
-        // Release the other semaphore.
+        // Release the other semaphoreStation.
         mOther.release();
     }
 }
