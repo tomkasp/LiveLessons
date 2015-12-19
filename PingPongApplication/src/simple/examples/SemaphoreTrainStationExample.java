@@ -5,11 +5,11 @@ import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.Semaphore;
 
 /**
- * Semaphore simple example based on a train station. Semaphore acts like a station whcih allows to park and release
+ * Semaphore simple example based on a train station. Semaphore acts like a station witch allows to park and release
  * trains.
  *
  * Semaphore based methods:
- * acquire()
+ * acquire() - attempt to acquire a permit (permit is a value which is set when semaphore is constructed)
  * release()
  */
 public class SemaphoreTrainStationExample {
